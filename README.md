@@ -1,3 +1,3 @@
-e-Mail : ryota.sg24@asagi.waseda.jp\n
+e-Mail : ryota.sg24@asagi.waseda.jp
 
 game, pointclouds, deepleaning, downsampling, compression
