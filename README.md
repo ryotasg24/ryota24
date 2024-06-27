@@ -1,5 +1,3 @@
-e-Mail : ryota.sg24@asagi.waseda.jp
-
+過去に作ったもの達
 TCP, pointclouds, deepleaning, downsampling, compression
 
-Python, JavaSprict, Java, C
