@@ -8,6 +8,7 @@ pointcloud, deepleaning, downsampling, compression, SHAP, shapley-value
 
 # SHAP Downsampling
 ## Usage
+`research/232/SHAP`
 
 ### 1. Preparation: Training the Gate Model
 
