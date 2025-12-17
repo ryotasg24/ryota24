@@ -1,7 +1,7 @@
-TCP, pointclouds, deepleaning, downsampling, compression, SHAP, shapley value
-
 Python, JavaSprict, Java, C
+pointcloud, deepleaning, downsampling, compression, SHAP, shapley-value
 
+### 
 # SHAP Downsampling
 ## Usage
 
