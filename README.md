@@ -64,7 +64,7 @@ done
 **SHAP-Based Coverage-Aware Downsampling**
 
 ```bash
-for ds_points in 200 300 400 500 600 700 800 900 1000; do \
+for ds_points in 100 200 300 400 500 600 700 800 900 1000; do \
     CUDA_VISIBLE_DEVICES=0 python switch_SD-CS.py \
         --ds_points ${ds_points} \
         --ama --ama_mode mlp \
