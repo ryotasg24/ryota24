@@ -2,10 +2,12 @@ TCP, pointclouds, deepleaning, downsampling, compression, SHAP, shapley value
 
 Python, JavaSprict, Java, C
 
-SHAP Downsampling
+**SHAP Downsampling**
 ## Usage
 
-Run the following commands to execute the full pipeline (Training -> Fitting -> Evaluation Loop):
+### 1. Preparation: Training the Gate Model
+
+First, run the following commands to generate training data, process it, and fit the Gate model. This is a prerequisite for the evaluation steps.
 
 ```bash
 export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:64 && \
@@ -34,7 +36,15 @@ CUDA_VISIBLE_DEVICES=0 python fit_gate_AMAmlp.py \
     --n_list 100 200 300 400 500 600 700 800 900 1000 \
     --out_pth result/_gate_train_dump/gate_mlp_noBeta.pth \
     --out_scaler result/_gate_train_dump/gate_scaler_noBeta.npz \
-    --no_auto_suffix && \
+    --no_auto_suffix
+```
+
+### 2. Evaluation Loops
+After the preparation is complete, you can run the evaluation loops for different methods.
+
+**SHAP Downsampling (AMA-MLP)**
+
+```bash
 for ds_points in 100 200 300 400 500 600 700 800 900 1000; do \
     CUDA_VISIBLE_DEVICES=0 python AMA_SHAP_for_PointNeXt.py \
         --ds_points $ds_points \
@@ -48,5 +58,24 @@ for ds_points in 100 200 300 400 500 600 700 800 900 1000; do \
         --division_region 32 \
         --division_point 64 \
         --cache_mode save; \
+done
+```
+
+**SHAP-Based Coverage-Aware Downsampling**
+
+```bash
+for ds_points in 200 300 400 500 600 700 800 900 1000; do \
+    CUDA_VISIBLE_DEVICES=0 python switch_SD-CS.py \
+        --ds_points ${ds_points} \
+        --ama --ama_mode mlp \
+        --gate_ckpt result/_gate_train_dump/gate_mlp_noBeta.pth \
+        --gate_scaler result/_gate_train_dump/gate_scaler_noBeta.npz \
+        --pattern 10000 \
+        --division_region 32 \
+        --division_point 64 \
+        --mask_chunk 512 \
+        --min_mask_chunk 16 \
+        --cache_mode auto \
+        --run_tag allOn; \
 done
 ```
