@@ -97,13 +97,13 @@ CUDA_VISIBLE_DEVICES=0 python examples/classification/main.py --cfg cfgs/modelne
 ```
 
 **Test (Downsampled Point Cloud):**
-Note: Regarding the input data, please modify the `[data_dir]` and `[test:num_points]` settings within `/workspace/PointNeXt/cfgs/modelnet40ply2048/default.yaml`.
+Note: Regarding the input data, please modify the `[data_dir]` and `[test:num_points]` settings within `cfgs/modelnet40ply2048/default.yaml`.
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python examples/classification/main.py \
     --cfg cfgs/modelnet40ply2048/pointnext-s.yaml \
     mode=test \
-    --pretrained_path /workspace/PointNeXt/log/modelnet40ply2048/modelnet40ply2048-train-pointnext-*/checkpoint/modelnet40ply2048-train-pointnext-*_ckpt_best.pth
+    --pretrained_path log/modelnet40ply2048/modelnet40ply2048-train-pointnext-*/checkpoint/modelnet40ply2048-train-pointnext-*_ckpt_best.pth
 ```
 
 ### 2. Part Segmentation (ShapeNet)
@@ -120,7 +120,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/shapenetpart/main.py --cfg cfgs/shapenetp
 CUDA_VISIBLE_DEVICES=0 python examples/shapenetpart/main.py \
     --cfg cfgs/shapenetpart/pointnext-s.yaml \
     mode=test \
-    --pretrained_path /workspace/PointNeXt/log/shapenetpart/shapenetpart-train-pointnext-*/checkpoint/shapenetpart-train-pointnext-*L_ckpt_best.pth
+    --pretrained_path log/shapenetpart/shapenetpart-train-pointnext-*/checkpoint/shapenetpart-train-pointnext-*_ckpt_best.pth
 ```
 
 ### 3. Segmentation (S3DIS, ScanNet)
