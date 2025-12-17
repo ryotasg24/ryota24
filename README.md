@@ -97,7 +97,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/classification/main.py --cfg cfgs/modelne
 ```
 
 **Test (Downsampled Point Cloud):**
-Note: Regarding the input data, please modify the [data_dir] and [test:num_points] settings within "/workspace/PointNeXt/cfgs/modelnet40ply2048/default.yaml".
+Note: Regarding the input data, please modify the `[data_dir]` and `[test:num_points]` settings within `/workspace/PointNeXt/cfgs/modelnet40ply2048/default.yaml`.
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python examples/classification/main.py \
