@@ -2,7 +2,7 @@ TCP, pointclouds, deepleaning, downsampling, compression, SHAP, shapley value
 
 Python, JavaSprict, Java, C
 
-**SHAP Downsampling**
+# SHAP Downsampling
 ## Usage
 
 ### 1. Preparation: Training the Gate Model
