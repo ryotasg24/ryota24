@@ -10,6 +10,9 @@ pointcloud, deepleaning, downsampling, compression, SHAP, shapley-value
 ## Usage
 `research/232/SHAP`
 
+## ENVIRONMENT
+The required environment is an 'RTX 3060 Ti' graphics card and CUDA version '12.3'.
+
 ### 1. Preparation: Training the Gate Model
 
 First, run the following commands to generate training data, process it, and fit the Gate model. This is a prerequisite for the evaluation steps.
