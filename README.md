@@ -11,7 +11,7 @@ pointcloud, deepleaning, downsampling, compression, SHAP, shapley-value
 `research/232/SHAP`
 
 ## ENVIRONMENT
-The required environment is an 'RTX 3060 Ti' graphics card and CUDA version '12.3'.
+The required environment is an `RTX 3060 Ti` graphics card and CUDA version `12.3`.
 
 ### 1. Preparation: Training the Gate Model
 
